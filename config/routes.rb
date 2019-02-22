@@ -13,6 +13,10 @@ Rails.application.routes.draw do
       resources :providers, only: [] do
         resources :trackings, only: %i(create)
       end
+
+      resources :trackings, only: [], param: :code do
+        patch :convert, on: :member
+      end
     end
   end
 
