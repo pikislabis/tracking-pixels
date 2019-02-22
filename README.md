@@ -65,6 +65,6 @@ http://localhost:3000
 
 ## TODOs
 
-* Test the API.
-* A Profile view where the user can view its API Token.
-* Integrate the application with a CI/CD tool such as CircleCI for test automation. 
+* Complete the testing coverage.
+* Manage users and roles.
+* Integrate the application with a CI/CD tool such as CircleCI for test automation.
