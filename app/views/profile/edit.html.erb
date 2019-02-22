@@ -1,0 +1,12 @@
+<h2>My Profile</h2>
+
+<%= simple_form_for(@user, url: { action: "update" } ) do |f| %>
+  <%= f.input :email, disabled: true %>
+  <%= f.input :api_token, disabled: true, label: 'API Token' %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <div class="float-right">
+    <%= link_to 'Recreate API Token', recreate_api_token_path, method: :patch, class: 'btn btn-secondary' %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>

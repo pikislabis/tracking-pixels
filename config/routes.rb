@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :trackings
   end
 
+  get 'my_profile' => 'profile#edit', as: :my_profile
+  patch 'my_profile' => 'profile#update', as: :update_my_profile
+  patch 'my_profile/api_token' => 'profile#recreate_api_token', as: :recreate_api_token
+
   namespace :api do
     namespace :v1 do
       resources :providers, only: [] do
