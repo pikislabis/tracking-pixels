@@ -44,6 +44,8 @@ gem 'devise', '~> 4.6', '>= 4.6.1'
 group :development, :test do
   gem 'pry-rails'
   gem 'faker'
+  gem 'dotenv-rails', '~> 2.6'
+  gem 'foreman', '~> 0.85.0'
 end
 
 group :development do

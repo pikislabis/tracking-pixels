@@ -1,0 +1,2 @@
+# You can run these commands in separate shells
+web: bundle exec puma -C config/puma.rb
