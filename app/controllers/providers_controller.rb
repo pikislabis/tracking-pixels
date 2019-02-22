@@ -30,7 +30,7 @@ class ProvidersController < ApplicationController
   end
 
   def destroy
-    @provider.delete
+    @provider.destroy
     redirect_to providers_path
   end
 
