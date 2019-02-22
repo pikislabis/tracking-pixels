@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV.fetch("DB_HOST", "localhost") %>
+  username: <%= ENV.fetch("DB_USER", 'postgres') %>
+  password: <%= ENV.fetch("DB_PASSWORD", '') %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  reaping_frequency: <%= ENV.fetch("DB_REAPING_FREQUENCY", 10) %>
+
+development:
+  <<: *default
+  database: tracking_development
+
+test:
+  <<: *default
+  database: tracking_test
+
+production:
+  <<: *default
+  pool: <%= [ENV.fetch("MAX_THREADS", 5), ENV.fetch("DB_POOL", 5)].max %>
+  database: tracking_production
