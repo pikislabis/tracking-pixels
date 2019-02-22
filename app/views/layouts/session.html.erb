@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tracking Pixels</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="session wrapper fadeInDown">
+      <div id="formContent">
+        <div class="fadeIn first">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>">
+              <a href="#" data-dismiss="alert" ></a>
+              <ul style="list-style-type: none">
+                <li>
+                  <% if key == "alert"%>
+                  <div class="alert alert-danger alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong> <%= value %></strong>
+                  </div>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+
+        <%= yield %>
+
+      </div>
+    </div>
+  </body>
+</html>
