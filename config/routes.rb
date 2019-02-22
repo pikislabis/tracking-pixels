@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
 
-  resources :providers
+  resources :providers do
+    resources :trackings
+  end
 
   root 'providers#index'
 end
