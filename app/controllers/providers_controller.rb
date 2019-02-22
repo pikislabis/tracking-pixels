@@ -2,7 +2,7 @@ class ProvidersController < ApplicationController
   before_action :set_provider, only: %i(edit update destroy)
 
   def index
-    @providers = Provider.all
+    @providers = Provider.includes(:trackings).all
   end
 
   def new
