@@ -1,5 +1,6 @@
 <tr class="row m-0">
-  <td class="d-inline-block col-6"><%= tracking.name %></td>
-  <td class="d-inline-block col-5"><%= tracking.validated ? 'Yes' : 'No' %></td>
+  <td class="d-inline-block col-4"><%= tracking.name %></td>
+  <td class="d-inline-block col-4"><%= tracking.code %></td>
+  <td class="d-inline-block col-3"><%= tracking.validated ? 'Yes' : 'No' %></td>
   <td class="d-inline-block col-1"><%= link_to 'Destroy', provider_tracking_path(tracking.provider, tracking), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
 </tr>
