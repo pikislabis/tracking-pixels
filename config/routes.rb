@@ -8,5 +8,13 @@ Rails.application.routes.draw do
     resources :trackings
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :providers, only: [] do
+        resources :trackings, only: %i(create)
+      end
+    end
+  end
+
   root 'providers#index'
 end
